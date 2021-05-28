@@ -2,11 +2,8 @@
 
 namespace App\Jobs;
 
-use App\HttpClientCall;
-use Exception;
-use GuzzleHttp\Client;
+use App\GuzzleCall;
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldBeUnique;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
@@ -21,7 +18,7 @@ class GuzzleImplementation implements ShouldQueue
      *
      * @return void
      */
-    public function handle(HttpClientCall $call)
+    public function handle(GuzzleCall $call)
     {
         for ($i = 0; $i < 100; $i++) {
             print("Guzzle $i\n");
